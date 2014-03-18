@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Profile</title>
+<style type="text/css">
+.buttons {
+	font-family: arial;
+	font-size: 8pt;
+	border-bottom:1px solid #282828; border-right:1px solid #282828; border-top:1px solid #8794A0; border-left:1px solid #8794A0;
+	background-color: #E4E4E4;
+}
+
+</style>
+<script type="text/javascript" src="myprofile.js"></script>
+</head>
+<body>
+<div align="center" style="position:relative;width:700px;height:590px;margin:auto;">
+
+		<input type=button class="buttons" value=prev onclick="goprev();">
+		<input type=button class="buttons" value=next onclick="gonext();">
+		Page: <select id="flipSelect" style="display:none;"></select>
+<h1>My Profile</h1>
+
+<br><br>
+
+	<div id="myProfile" style="display:none;">
+		<div name="Home" style="background:#055123 url(1378532_10151597158796504_1065312822_n.jpg);color:#ffffff;">
+			<div align=center><em>
+			<h1>IT'S ALL<br>ABOUT ME</h1></em>
+			</div>
+		</div>
+		<div name="Page 1" style="background:#785165;color:#ffffff;"></div>
+		<div name="Page 2" style="background:#785165;color:#ffffff;"><br><br><em>
+			<h1 align="center">Rania Abdel Fattah</h1><br><br>
+				<h2>Born in 1992<br>Living in Maadi</h2></em>
+		</div>
+		
+		<div name="Page 3" style="background:#785165 url(9836_10153280890735133_356794804_n.jpg);color:#ffffff;"></div>
+		<div style="background:#785165;color:#ffffff;">
+			<div align=center><br><em>
+				<h1>1st stage in my life<br>School</h1><br>
+				<h2>Went to a French School for 14 years<br><br>"College de la Mere de Dieu"</h2></em>
+			</div>
+		</div>
+		
+
+		<div style="background:#785165 url(eee_i.jpg);color:#ffffff;"></div>
+		<div style="background:#785165;color:#ffffff;">
+			<div align=center><br>
+				<h1>University</h1><br><em>
+				<h2>Media Engineering and Technology "METians"<br><br>In Three Active Working Groups</h2></em>
+			</div>
+		</div>
+		<div style="background:#785165 url(images.jpg);color:#ffffff;"></div>
+		<div style="background:#785165;color:#ffffff;">
+			<div align=center><br><br><br><br><br><br><em>
+				<h1>AND THIS IS MY LIFE UNTIL NOW :D</h1></em>
+			</div>
+		</div>
+		
+
+
+<br>
+</div>
+<script type="text/javascript">
+function autoflipFromUrl(){
+	var pos;
+	var searchStr = window.location.search;
+	var searchArray = searchStr.substring(1,searchStr.length).split('&');
+	var result = '';
+	for (var i=0; i<searchArray.length; i++) {
+		result = searchArray[i].split('=');
+		if(result[0]=="autoflip"){
+			result=result[1];
+			break;
+		}
+	}
+	return(result);
+}
+
+var myPageW=350; 
+var myPageH=361; 
+var pageBorderWidth=1; 
+var pageBorderColor="#000000"; 
+var pageBorderStyle="solid"; 
+
+var pSpeed=20; 
+var pSound=false; 
+
+var showBinder=false; 
+var binderImage = "parchmentring2.gif"; 
+var binderWidth = 20; 
+var numPixelsToMove = 20;
+
+
+var selectNavigation=true; 
+allowPageClick=true; 
+doIncrementalAutoFlip = false; 
+pageShadow=true; 
+ini();
+x=autoflipFromUrl(); 
+if( x ){autoFlip(x);};
+</script>
+
+</body>
+</html>
